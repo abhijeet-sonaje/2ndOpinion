@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2nd opinion</title>
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+	<link rel="stylesheet" href="assets/css/user.css">
+	<link rel="stylesheet" href="assets/css/login_user.css">
+	<link rel="stylesheet" href="assets/css/validation.css">
+	<link rel="stylesheet" href="assets/css/footernavbar.css">
+	<link rel="stylesheet" href="assets/bootstrap/fonts/font-awesome.min.css">
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/angular/js/angular.min.js"></script>
+	<script src="assets/angular/js/angular-route.min.js"></script>
+	<script src="assets/angular/js/angular-cookies.min.js"></script>
+	<script src="assets/js/app.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+
+<body ng-app='2NDopinion_app'>
+	<nav class="navbar navbar-default custom-header">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand navbar-link" href="#/">2nd <span>
+						Opinion </span>
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav links">
+					<li role="presentation"><a href="#"> Overview </a></li>
+					<li role="presentation"><a href="#"> Surveys </a></li>
+					<li role="presentation"><a href="#"> Reports</a></li>
+					<li role="presentation"><a href="#" class="custom-navbar">
+							Roles<span class="badge">new</span>
+					</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li role="presentation"><a href="#/login">Login </a></li>
+					<li role="presentation"><a href="#/signup"> Sign Up</a></li>
+					<!-- <li class="dropdown"><a class="dropdown-toggle hidden"
+						data-toggle="dropdown" aria-expanded="false" href="#"> <span
+							class="caret"></span><img src="assets/img/avatar.jpg"
+							class="dropdown-image"></a>
+						<ul class="dropdown-menu dropdown-menu-right" role="menu">
+							<li><a href="#">Settings </a></li>
+							<li><a href="#">Payments </a></li>
+							<li class="active"><a href="#">Logout </a></li>
+						</ul></li> -->
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div >
+		<div ng-view=""></div>
+	</div>
+	<footer class="footer">
+		<nav class="navbar navbar-default navbar-fixed-bottom custom-header">
+			<div class="new">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed"
+							data-toggle="collapse" data-target="#navbar-collapse1">
+							<span class="sr-only">Toggle navigation</span> <span
+								class="icon-bar"></span> <span class="icon-bar"></span> <span
+								class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand navbar-link" href="#/">2nd <span>
+								Opinion </span>
+						</a>
+					</div>
+					<div class="collapse navbar-collapse" id="navbar-collapse1">
+						<ul class="nav navbar-nav links">
+							<li role="presentation"><a href="#/"> Home </a></li>
+							<li role="presentation"><a href="#/aboutus"> About Us </a></li>
+							<li role="presentation"><a href="#/faq"> FAQ </a></li>
+							<li role="presentation"><a href="#/contact"> Contact </a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li role="presentation"><span
+								class="fa fa-phone footer-contacts-icon"></span> +1 555 123456</li>
+							<li role="presentation">&nbsp;&nbsp;<span
+								class="fa fa-envelope footer-contacts-icon"></span>
+								support@r0ckstar.com
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</footer>
+</body>
+
+</html>
