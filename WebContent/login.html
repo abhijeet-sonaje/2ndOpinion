@@ -2,29 +2,21 @@
 	<div class="login-card">
 		<img src="assets/img/avatar_2x.png" class="profile-img-card">
 		<p class="profile-name-card"></p>
-		<form class="form-signin">
+		<form name="loginform" class="form-signin">
 			<span class="reauth-email"> </span> 
-			<input class="form-control" type="email" ng-model="email" placeholder="Email address" autofocus id="inputEmail" required>
-			<div class="input-help">
-      			<h4>Invalid Email</h4>
-    		</div>
-			<input ng-model="password" class="form-control immediate-help" password-validate type="password" placeholder="Password" id="inputPassword" required>
-			<div class="input-help">
-				<h4>Password must meet the following requirements:</h4>
-			    	<ul>
-			        	<li ng-class="pwdHasLetter">At least <strong>one letter</strong></li>
-			        	<li ng-class="pwdHasNumber">At least <strong>one number</strong></li>
-			        	<li ng-class="pwdValidLength">At least <strong>8 characters long</strong></li>
-			      	</ul>
-		    </div>
+			<input class="form-control" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,10}$/" type="email" name="email" ng-model="email" placeholder="Email address" autofocus id="inputEmail" required>
+			<p class="text-danger" ng-show="loginform.email.$invalid && loginform.email.$touched">Email is Invalid!</p>
+			<input ng-model="password" class="form-control immediate-help" name="password" type="password" placeholder="Password" id="inputPassword" required>
+			<p class="text-danger" ng-show="loginform.password.$touched && loginform.password.$invalid">Password is required!</p>
 			<div class="checkbox">
 				<div class="checkbox">
 					<label> <input type="checkbox">Remember me
 					</label>
 				</div>
 			</div>
-			<button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Sign in</button>
+			<button class="btn btn-primary btn-block btn-lg btn-signin" type="submit" ng-click="signin()">Sign in</button>
+			<p class="text-danger" ng-model="loginformalert">{{ loginformalert }}</p>	
 		</form>
-		<a href="#" class="forgot-password">Sign Up</a>
-		<a href="#" class="forgot-password" style="float:right;">Forgot your password?</a>
+		<a href="#/signup" class="forgot-password">Sign Up</a>
+		<a href="#/forgotpass" class="forgot-password" style="float:right;">Forgot your password?</a>
 	</div>

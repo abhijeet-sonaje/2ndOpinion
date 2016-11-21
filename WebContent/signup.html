@@ -1,21 +1,27 @@
 
 	<div class="signup-card">
 		<p class="profile-name-card">Registration Form</p>
-		<form class="form-signin">
+		<form name="signupform" class="form-signin">
 			<span class="reauth-email"> </span>
-			<input class="form-control" type="text" placeholder="First name" autofocus id="inputFname" required> 
-			<input class="form-control" type="text" placeholder="Last name" autofocus id="inputLname" required> 
-			<input class="form-control" type="email" placeholder="Email address" id="inputEmail" required>
-			<input class="form-control" type="password" placeholder="Password" id="inputPassword" required>
-			<input class="form-control" type="password" placeholder="Repeat Password" id="inputRPassword" required>
+			<input class="form-control" type="text" name="fname" ng-model="fname" placeholder="First name" autofocus id="inputFname" required> 
+			<p class="text-danger" ng-show="signupform.fname.$invalid && signupform.fname.$touched">First Name is required!</p>
+			<input class="form-control" type="text" name="lname" ng-model="lname" placeholder="Last name" autofocus id="inputLname" required> 
+			<p class="text-danger" ng-show="signupform.lname.$invalid && signupform.lname.$touched">Last Name is required!</p>
+			<input class="form-control" type="email" name="email" ng-pattern="/^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,10}$/" ng-model="email" placeholder="Email address" id="inputEmail" required>
+			<p class="text-danger" ng-show="signupform.email.$invalid && signupform.email.$touched">Email is Invalid!</p>
+			<input class="form-control" type="password" name="password" ng-model="password" placeholder="Password" id="inputPassword" required>
+			<p class="text-danger" ng-show="signupform.password.$invalid && signupform.password.$touched">Password is required!</p>
+			<input class="form-control" type="password" name="rpassword" ng-model="rpassword" placeholder="Repeat Password" id="inputRPassword" required>
+			<p class="text-danger" ng-show="signupform.rpassword.$invalid && signupform.rpassword.$touched">Repeat password is required!</p>
 			<div class="checkbox">
 	        	<!-- <div class="checkbox"> -->
 		        	<label>
-		            	<input type="checkbox">I've read and accept the terms and conditions</input>
+		            	<input type="checkbox">I've read and accept the <a href="#/">terms and conditions</a>.</input>
 		            </label>
 	            <!-- </div> -->
 	        </div>
-			<button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Sign Up</button>
+	        <p class="text-danger" ng-model="signupformalert">{{ signupformalert }}</p>
+			<button class="btn btn-primary btn-block btn-lg btn-signin" type="submit" ng-click="signup()">Sign Up</button>
 		</form>
 	</div>
 
